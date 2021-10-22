@@ -4,15 +4,18 @@
     <meta charset="utf-8"/>
     <title>Off The Rails</title>
     <script src="https://unpkg.com/vue@3.2.19/dist/vue.global.prod.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <h1>🚂 Off The Rails</h1>
-    <div id="app">
-      <label for="URL">URL</label>
-      <input type="text" name="URL" id="URL" v-model="url"/>
-      <a v-if="result" v-bind:href="result">{{  result }}</a>
-      <button v-on:click="derail">Derail</button>
-      <p v-if="error">Sorry! {{ error }}</p>
+    <div class="container">
+      <div class="title"><h1>🚂 Off The Rails</h1></div>
+      <div id="app">
+        <label for="URL">URL:</label>
+        <input type="text" name="URL" id="URL" v-model="url"/>
+        <a v-if="result" v-bind:href="result">{{  result }}</a>
+        <button v-on:click="derail">Derail</button>
+        <p v-if="error">Sorry! {{ error }}</p>
+      </div>
     </div>
     <script>
         const API_URL = './.netlify/functions/derail';
